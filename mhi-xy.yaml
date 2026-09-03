@@ -29,9 +29,8 @@ api:
   reboot_timeout: 0s
 
 external_components:
-  - source:
-      type: local
-      path: components
+  - source: github://rwijbenga/mhi-xy-esphome@main
+    components: [mhi_xy]
 
 uart:
   id: xy_uart

@@ -15,21 +15,17 @@ Protocol decoding follows the P1P2MQTT `MHI_SERIES` mapping and the 3-byte-to-1-
 
 ## Install on Home Assistant ESPHome
 
-1. Copy this folder's `components/mhi_xy/` into `/config/esphome/components/mhi_xy/`
-2. Copy `mhi-xy.yaml` into `/config/esphome/` (already pushed if you used the MCP flow)
-3. Ensure `secrets.yaml` has `wifi_ssid` / `wifi_password`
-4. Compile and flash the D1 Mini over USB the first time, then OTA
-
-The YAML uses:
+Use the published component from GitHub:
 
 ```yaml
 external_components:
-  - source:
-      type: local
-      path: components
+  - source: github://rwijbenga/mhi-xy-esphome@main
+    components: [mhi_xy]
 ```
 
-so the `components` directory must sit next to the YAML in the ESPHome config folder.
+Or copy `components/mhi_xy/` into `/config/esphome/components/mhi_xy/` and switch the YAML to a local `external_components` path.
+
+Ensure `secrets.yaml` has `wifi_ssid` / `wifi_password`, then compile and flash the D1 Mini (USB first, then OTA).
 
 ## Entities
 
