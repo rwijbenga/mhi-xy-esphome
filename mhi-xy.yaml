@@ -31,6 +31,7 @@ api:
 external_components:
   - source: github://rwijbenga/mhi-xy-esphome@main
     components: [mhi_xy]
+    refresh: 0s
 
 uart:
   id: xy_uart
